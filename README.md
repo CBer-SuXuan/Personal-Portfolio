@@ -46,6 +46,7 @@ Extra information:
 - **QuestsPlugin**: This plugin is for quests in server and it is **highly customizable**. You can customize different quests with its name, actions, rewards and so on. And the menu of categories and quests can also be customized! You can change button name, icon(support HeadDatabase plugin), lore, glowing in config.yml.
 - **VillagerShop**: Stuff can **make a villager shop** easily and create trades of this shop by menu.
 - **Wardrobe**: A **whole system of wardrobe**. Player can put their armor in the wardrobe and click button in wardrobe menu to put on armor. Also support use command to put on armor quickly. The plugin will store armor's data completely so don't afraid of losing some important data.
+- **Game**: This game plugin is currently under development. At present, only lucky pillar game has been updated.
 
 ### Plugin not suitable for showing:
 
