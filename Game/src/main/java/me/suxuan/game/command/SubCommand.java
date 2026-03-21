@@ -35,7 +35,7 @@ public interface SubCommand {
 		if (sender instanceof Player player) {
 			return player;
 		}
-		throw new IllegalStateException("Command sender is not a player.");
+		throw new IllegalStateException("必须是玩家执行该命令！");
 	}
 
 	default boolean canUse(CommandSender sender) {

@@ -1,5 +1,6 @@
 package me.suxuan.game.command;
 
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,13 +10,15 @@ import java.util.*;
 
 public abstract class AbstractRootCommand implements CommandExecutor, TabCompleter {
 
+	private MiniMessage mm = MiniMessage.miniMessage();
+
 	private final Map<String, SubCommand> byName = new HashMap<>();
 	private final Map<String, SubCommand> byAlias = new HashMap<>();
 
 	protected void register(SubCommand cmd) {
 		String name = cmd.name().toLowerCase(Locale.ROOT);
 		if (byName.containsKey(name) || byAlias.containsKey(name)) {
-			throw new IllegalStateException("Duplicate subcommand: " + name);
+			throw new IllegalStateException("根命令 " + rootName() + " 下发现重复的子命令 " + name);
 		}
 		byName.put(name, cmd);
 
@@ -23,7 +26,7 @@ public abstract class AbstractRootCommand implements CommandExecutor, TabComplet
 			if (a == null || a.isBlank()) continue;
 			String alias = a.toLowerCase(Locale.ROOT);
 			if (byName.containsKey(alias) || byAlias.containsKey(alias)) {
-				throw new IllegalStateException("Duplicate subcommand alias: " + alias);
+				throw new IllegalStateException("根命令 " + rootName() + " 下发现重复的子命令别名 " + alias);
 			}
 			byAlias.put(alias, cmd);
 		}
@@ -32,10 +35,10 @@ public abstract class AbstractRootCommand implements CommandExecutor, TabComplet
 	protected abstract String rootName();
 
 	protected void sendHelp(CommandSender sender) {
-		sender.sendMessage("§e用法: §f/" + rootName() + " <sub>");
+		sender.sendMessage(mm.deserialize("<yellow>用法：<white>/" + rootName() + " <sub>"));
 		List<String> names = new ArrayList<>(byName.keySet());
 		Collections.sort(names);
-		sender.sendMessage("§e子命令: §f" + String.join(", ", names));
+		sender.sendMessage(mm.deserialize("<yellow>子命令：<white>" + String.join(", ", names)));
 	}
 
 	private SubCommand find(String keyRaw) {
@@ -54,18 +57,18 @@ public abstract class AbstractRootCommand implements CommandExecutor, TabComplet
 
 		SubCommand sub = find(args[0]);
 		if (sub == null) {
-			sender.sendMessage("§c未知子命令: §f" + args[0]);
+			sender.sendMessage(mm.deserialize("<red>未知子命令: <white>" + args[0]));
 			sendHelp(sender);
 			return true;
 		}
 
 		if (!sub.checkPlayerOnly(sender)) {
-			sender.sendMessage("§c该子命令只能由玩家执行");
+			sender.sendMessage(mm.deserialize("<red>该子命令只能由玩家执行"));
 			return true;
 		}
 
 		if (!sub.canUse(sender)) {
-			sender.sendMessage("§c你没有权限执行该命令");
+			sender.sendMessage(mm.deserialize("<red>你没有权限执行该命令"));
 			return true;
 		}
 
