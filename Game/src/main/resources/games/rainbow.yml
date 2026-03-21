@@ -1,0 +1,50 @@
+display-name: "<red>彩<orange>虹<yellow>大<green>乱<blue>斗"
+template-name: "void_world"
+
+min-players: 2
+max-players: 16
+countdown-seconds: 5
+
+lobby-location: "0.5, 100, 0.5"
+
+return-location: "world:-16.0, 66, -7.0"
+
+generator:
+  center: "0.5, 0, 0.5"   # 底盘的圆心
+
+  # 柱子生成规则
+  pillar:
+    material: "GLASS"        # 柱子材质
+    base-radius: 8.0        # 基础半径
+    radius-growth: 1       # 每多一人增加的半径
+    height: 80               # 柱子高度
+
+  # 底盘生成规则
+  floor:
+    margin: 3.0              # 底盘比柱子圈大 3 格
+    thickness: 1             # 底盘厚度
+    style: "CIRCLE"      # 样式: CIRCLE
+    blocks:
+      - RED_STAINED_GLASS
+      - ORANGE_STAINED_GLASS
+      - YELLOW_STAINED_GLASS
+      - LIME_STAINED_GLASS
+      - LIGHT_BLUE_STAINED_GLASS
+      - BLUE_STAINED_GLASS
+      - PURPLE_STAINED_GLASS
+
+item-give-interval: 5
+random-item-pool:
+  - "ALL"
+
+event-interval: 20
+events: [ ]
+
+fixed-effect: "NONE"
+
+border:
+  min-radius: 3.0
+  shrink-amount: 3.0
+  safe-time: 60
+  shrink-time: 10
+  damage: 1.0

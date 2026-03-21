@@ -1,0 +1,13 @@
+name: TSLLuckyPillar
+version: '1.0'
+main: me.suxuan.game.Game
+api-version: '1.21'
+commands:
+  pillar:
+    description: Game LuckPillars插件命令
+    usage: /<command> <subcommand>
+    aliases: [ lp, luckpillar ]
+  potato:
+    description: Game Potato插件命令
+    usage: /<command> <subcommand>
+    aliases: [ pt, hotpotato ]

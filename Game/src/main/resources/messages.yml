@@ -1,0 +1,27 @@
+prefix: "<dark_gray>[<gold>幸运之柱<dark_gray>] "
+no-permission: "<red>你没有权限执行此命令。"
+only-player: "<red>只有玩家可以使用此命令。"
+unknown-command: "<red>未知指令，输入 /pillar help 查看帮助。"
+
+command:
+  reload-success: "<green>配置和语言文件已重新加载！"
+  join-success: "<green>你加入了游戏: <yellow>%mode%"
+  leave-success: "<yellow>你离开了游戏。"
+  already-in-game: "<red>你已经在游戏中了！"
+  not-in-game: "<red>你当前不在任何游戏中。"
+  mode-not-found: "<red>找不到指定的游戏模式: %mode%"
+  no-modes-available: "<red>当前没有可用的游戏模式。"
+  create-failed: "<red>创建游戏失败，请联系管理员。"
+
+game:
+  join-broadcast: "<yellow>%player% 加入了游戏 (<aqua>%count%<yellow>/<aqua>%max%<yellow>)"
+  leave-broadcast: "<yellow>%player% 离开了游戏。"
+  not-enough-players: "<red>没有足够的玩家，倒计时取消。"
+  countdown: "<yellow>游戏将在 <aqua>%time% <yellow>秒后开始..."
+  start: "<gold><bold>游戏开始！祝你好运！"
+  eliminated: "<red>%player% 被淘汰了！"
+  eliminated-title: "<red>淘汰"
+  eliminated-subtitle: "<gray>你已成为旁观者"
+  win: "<gold><bold>游戏结束！获胜者是: <yellow>%winner%"
+  no-winner: "<red>游戏结束，无人获胜。"
+  event-triggered: "<white>即将发生某些事情..."
