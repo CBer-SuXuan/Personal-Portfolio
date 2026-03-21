@@ -43,8 +43,13 @@ Extra information:
 
 ### Large plugins:
 
-- **QuestsPlugin**: This plugin is for quests in server and it is highly customizable. You can customize different quests with its name, actions, rewards and so on. And the menu of categories and quests can also be customized! You can change button name, icon**(support HeadDatabase plugin!)**, lore, glowing in config.yml.
-- **VillagerShop**: Still making. Stuff can make a shop easily and create trades of this shop by menu. Will extend more details in the future.
+- **QuestsPlugin**: This plugin is for quests in server and it is **highly customizable**. You can customize different quests with its name, actions, rewards and so on. And the menu of categories and quests can also be customized! You can change button name, icon(support HeadDatabase plugin), lore, glowing in config.yml.
+- **VillagerShop**: Stuff can **make a villager shop** easily and create trades of this shop by menu.
+- **Wardrobe**: A **whole system of wardrobe**. Player can put their armor in the wardrobe and click button in wardrobe menu to put on armor. Also support use command to put on armor quickly. The plugin will store armor's data completely so don't afraid of losing some important data.
+
+### Plugin not suitable for showing:
+
+- **Cosmetics**: Player can use money buy trims and patterns. Trims for armor and patterns for shield. Have a interactive menu for trim putting and a pattern overlay menu that can be withdrawn.
 
 ## Other I want to say
 
